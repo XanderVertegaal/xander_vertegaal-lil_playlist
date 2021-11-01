@@ -28,9 +28,10 @@ const updateSongList = (state = defaultSongList, action) => {
     let newState = [...state]
     switch (action.type) {
         case "ADD_SONG":
-            let newId = 1;
-            while (newState.some(item => item.id === newId)) {
-                newId = newId + 1
+            var found = false
+            for (let i = 1; found === false; i++) {
+                var newId = i;
+                found = !(newState.some(item => item.id === i))
             }
             const newArtist = action.payload.artist; 
             const newTitle = action.payload.title;
