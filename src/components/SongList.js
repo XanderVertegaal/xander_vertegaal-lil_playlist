@@ -17,7 +17,6 @@ const SongList = () => {
             </th>
         </tr>
     ))
-
     return songItems
 }
 

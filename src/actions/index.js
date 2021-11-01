@@ -26,14 +26,15 @@ export const updateRating = (value) => {
     }
 }
 
-export const addSong = (title, artist, genre, rating) => {
+export const addSong = (title, artist, genre, rating, sorting) => {
     return {
         type: "ADD_SONG",
         payload: {
             title, 
             artist, 
             genre, 
-            rating
+            rating,
+            sorting
         }
     }
 }

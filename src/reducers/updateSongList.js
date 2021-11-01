@@ -24,6 +24,7 @@ const defaultSongList = [
     },
 ]
 
+
 const updateSongList = (state = defaultSongList, action) => {
     let newState = [...state]
     switch (action.type) {
@@ -44,15 +45,29 @@ const updateSongList = (state = defaultSongList, action) => {
                     genre: newGenre,
                     rating: newRating
                 })
+
+            console.log('Sorting algorithm:', action.payload.sorting.type, action.payload.sorting.order)
+            newState.sort((a, b) => {
+                let x = a[action.payload.sorting.type];
+                let y = b[action.payload.sorting.type];
+                if (action.payload.sorting.order === 'ascending') {
+                    return (x > y ? 1 : x < y ? -1 : 0)
+                } else {
+                    return (x > y ? -1 : x < y ? 1 : 0)
+                }
+            })  
+
             return newState
+
+
         case "DELETE_SONG":
             const deleteId = parseInt(action.payload.replace("btn-", ""))
             return newState.filter(song => song.id !== deleteId)
 
-        case "SORT_ARTIST":
+            case "SORT_TITLE":
             newState.sort((a, b) => {
-                let x = a.artist.toLowerCase();
-                let y = b.artist.toLowerCase();
+                let x = a.title.toLowerCase();
+                let y = b.title.toLowerCase();
                 if (action.payload === 'ascending') {
                     return (x > y ? 1 : x < y ? -1 : 0)
                 } else {
@@ -61,10 +76,10 @@ const updateSongList = (state = defaultSongList, action) => {
             })
             return newState
 
-            case "SORT_TITLE":
+            case "SORT_ARTIST":
             newState.sort((a, b) => {
-                let x = a.title.toLowerCase();
-                let y = b.title.toLowerCase();
+                let x = a.artist.toLowerCase();
+                let y = b.artist.toLowerCase();
                 if (action.payload === 'ascending') {
                     return (x > y ? 1 : x < y ? -1 : 0)
                 } else {

@@ -9,6 +9,7 @@ const InputForm = () => {
     const inputArtist = useSelector(state => state.updateInput.artist)
     const inputGenre = useSelector(state => state.updateInput.genre)
     const inputRating = useSelector(state => state.updateInput.rating)
+    const currSorting = useSelector(state => state.updateSorting)
 
     const dispatch = useDispatch();
 
@@ -34,7 +35,7 @@ const InputForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Submit handler log:', inputTitle)
-        dispatch(addSong(inputTitle, inputArtist, inputGenre, inputRating))
+        dispatch(addSong(inputTitle, inputArtist, inputGenre, inputRating, currSorting))
     }
 
     return (
