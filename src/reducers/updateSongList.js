@@ -48,6 +48,55 @@ const updateSongList = (state = defaultSongList, action) => {
         case "DELETE_SONG":
             const deleteId = parseInt(action.payload.replace("btn-", ""))
             return newState.filter(song => song.id !== deleteId)
+
+        case "SORT_ARTIST":
+            newState.sort((a, b) => {
+                let x = a.artist.toLowerCase();
+                let y = b.artist.toLowerCase();
+                if (action.payload === 'ascending') {
+                    return (x > y ? 1 : x < y ? -1 : 0)
+                } else {
+                    return (x > y ? -1 : x < y ? 1 : 0)
+                }
+            })
+            return newState
+
+            case "SORT_TITLE":
+            newState.sort((a, b) => {
+                let x = a.title.toLowerCase();
+                let y = b.title.toLowerCase();
+                if (action.payload === 'ascending') {
+                    return (x > y ? 1 : x < y ? -1 : 0)
+                } else {
+                    return (x > y ? -1 : x < y ? 1 : 0)
+                }
+            })
+            return newState
+
+            case "SORT_GENRE":
+            newState.sort((a, b) => {
+                let x = a.genre.toLowerCase();
+                let y = b.genre.toLowerCase();
+                if (action.payload === 'ascending') {
+                    return (x > y ? 1 : x < y ? -1 : 0)
+                } else {
+                    return (x > y ? -1 : x < y ? 1 : 0)
+                }
+            })
+            return newState
+
+            case "SORT_RATING":
+            newState.sort((a, b) => {
+                let x = a.rating;
+                let y = b.rating;
+                if (action.payload === 'ascending') {
+                    return (x > y ? 1 : x < y ? -1 : 0)
+                } else {
+                    return (x > y ? -1 : x < y ? 1 : 0)
+                }
+            })
+            return newState
+
         default:
             return state
     }

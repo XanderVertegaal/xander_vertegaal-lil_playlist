@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import DeleteButton from "./DeleteButton";
 
-const SongList = (props) => {
+const SongList = () => {
     const currSongList = useSelector(state => state.updateSongList)
     const songItems = currSongList.map(item => (
         <tr className="item-row" id={item.id} key={item.id}>

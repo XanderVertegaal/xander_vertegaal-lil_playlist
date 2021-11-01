@@ -44,3 +44,31 @@ export const deleteSong = (itemId) => {
         payload: itemId
     }
 }
+
+export const sortTitle = (order) => {
+    return {
+        type: "SORT_TITLE",
+        payload: order
+    }
+}
+
+export const sortArtist = (order) => {
+    return {
+        type: "SORT_ARTIST",
+        payload: order
+    }
+}
+
+export const sortGenre = (order) => {
+    return {
+        type: "SORT_GENRE",
+        payload: order
+    }
+}
+
+export const sortRating = (order) => {
+    return {
+        type: "SORT_RATING",
+        payload: order
+    }
+}
