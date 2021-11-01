@@ -1,28 +1,29 @@
-const defaultInputState = {
+let defaultInputState = {
     artist: 'Artist',
-    song: 'song',
+    title: 'title',
     genre: 'Classical',
     rating: 1
 }
 
 const updateInput = (state = defaultInputState, action) => {
+    let newState = {...state}
     switch (action.type) {
-        case "UPDATE_SONG":
-            state.song = action.payload;
+        case "UPDATE_TITLE":
+            newState.title = action.payload;
             break
         case "UPDATE_ARTIST":
-            state.artist = action.payload;
+            newState.artist = action.payload;
             break
         case "UPDATE_GENRE":
-            state.genre = action.payload;
+            newState.genre = action.payload;
             break
         case "UPDATE_RATING":
-            state.rating = action.payload;
+            newState.rating = action.payload;
             break
         default:
-            state = 'Undefined'
+            newState = defaultInputState
     }
-    return state;
+    return newState;
 }
 
 export default updateInput

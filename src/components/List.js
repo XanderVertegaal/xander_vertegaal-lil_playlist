@@ -5,12 +5,14 @@ const List = () => {
     return (
         <>
             <table style={{width: "100%"}} className="list-header">
-                <tr className="song-header">  
-                    <th className="list-header-item">Song</th>
-                    <th className="list-header-item">Artist</th>
-                    <th className="list-header-item">Genre</th>
-                    <th className="list-header-item">Rating</th>
-                </tr>
+                <tbody>
+                    <tr className="song-header">  
+                        <th className="list-header-item">Title</th>
+                        <th className="list-header-item">Artist</th>
+                        <th className="list-header-item">Genre</th>
+                        <th className="list-header-item">Rating</th>
+                    </tr>
+                </tbody>
             </table>
             <SongList />
         </>

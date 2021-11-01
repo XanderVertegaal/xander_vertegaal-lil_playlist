@@ -5,9 +5,9 @@ export const updateArtist = (value) => {
     }
 }
 
-export const updateSong = (value) => {
+export const updateTitle = (value) => {
     return {
-        type: "UPDATE_SONG",
+        type: "UPDATE_TITLE",
         payload: value
     }
 }
