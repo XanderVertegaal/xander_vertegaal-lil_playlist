@@ -9,7 +9,7 @@ const List = () => {
                     <tr className="song-header">  
                         <th className="list-header-item">
                             Title
-                            <SortButtons />
+                            {/* <SortButtons /> */}
                         </th>
                         <th className="list-header-item">
                             Artist
