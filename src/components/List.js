@@ -11,10 +11,12 @@ const List = () => {
                         <th className="list-header-item">Artist</th>
                         <th className="list-header-item">Genre</th>
                         <th className="list-header-item">Rating</th>
+                        <th className="list-header-item"></th>
                     </tr>
+                    <SongList />
                 </tbody>
             </table>
-            <SongList />
+            
         </>
     )
 }

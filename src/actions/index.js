@@ -25,3 +25,22 @@ export const updateRating = (value) => {
         payload: value
     }
 }
+
+export const addSong = (title, artist, genre, rating) => {
+    return {
+        type: "ADD_SONG",
+        payload: {
+            title, 
+            artist, 
+            genre, 
+            rating
+        }
+    }
+}
+
+export const deleteSong = (itemId) => {
+    return {
+        type: "DELETE_SONG",
+        payload: itemId
+    }
+}

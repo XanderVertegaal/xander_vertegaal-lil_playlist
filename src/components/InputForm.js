@@ -2,15 +2,17 @@ import React from 'react'
 import GenreDropdown from './GenreDropdown'
 import RatingDropdown from './RatingDropdown'
 import { useSelector, useDispatch } from 'react-redux'
-import { updateArtist, updateTitle, updateGenre, updateRating } from '../actions'
+import { updateArtist, updateTitle, updateGenre, updateRating, addSong } from '../actions'
 
 const InputForm = () => {
-    const inputTitle = useSelector(state => state.title)
-    const inputArtist = useSelector(state => state.artist)
+    const inputTitle = useSelector(state => state.updateInput.title)
+    const inputArtist = useSelector(state => state.updateInput.artist)
+    const inputGenre = useSelector(state => state.updateInput.genre)
+    const inputRating = useSelector(state => state.updateInput.rating)
+
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        console.log(event.target.id)
         switch (event.target.id){
             case "input-title":
                 dispatch(updateTitle(event.target.value))
@@ -29,8 +31,16 @@ const InputForm = () => {
         }
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('Submit handler log:', inputTitle)
+        dispatch(addSong(inputTitle, inputArtist, inputGenre, inputRating))
+    }
+
     return (
-        <form>
+        <form
+            onSubmit = {handleSubmit}
+        >
             <input
                 type="text"
                 value={inputTitle}
