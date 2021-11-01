@@ -47,7 +47,6 @@ const updateSongList = (state = defaultSongList, action) => {
             return newState
         case "DELETE_SONG":
             const deleteId = parseInt(action.payload.replace("btn-", ""))
-            console.log('To be deleted ID:', deleteId)
             return newState.filter(song => song.id !== deleteId)
         default:
             return state
