@@ -46,7 +46,7 @@ const updateSongList = (state = defaultSongList, action) => {
                     rating: newRating
                 })
 
-            console.log('Sorting algorithm:', action.payload.sorting.type, action.payload.sorting.order)
+            // console.log('Sorting algorithm:', action.payload.sorting.type, action.payload.sorting.order)
             newState.sort((a, b) => {
                 let x = a[action.payload.sorting.type];
                 let y = b[action.payload.sorting.type];

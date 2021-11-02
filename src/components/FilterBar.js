@@ -4,7 +4,9 @@ import { updateFilter } from '../actions'
 
 const FilterBar = () => {
     const currSongList = useSelector(state => state.songList)
-    const dispatch = useDispatch
+    const currFilter = useSelector(state => state.currentFilter)
+
+    const dispatch = useDispatch()
     
     const currTitles = []
     const currArtists = []
@@ -30,45 +32,103 @@ const FilterBar = () => {
         const itemName = event.target.value;
         const itemType = event.target.parentElement.parentElement.parentElement.className.replace('filter-list-', '');
         const itemValue = event.target.checked;
-        console.log(itemName, itemType, itemValue)
-        dispatch(updateFilter(itemName, itemType, itemValue)) // Dit gaat dus mis.
+        dispatch(updateFilter(parseInt(itemName), itemType, itemValue))
         
     }
 
-    const outputList = []
-    for (let itemList of [currTitles, currArtists, currGenres, currRatings]) {
-        outputList.push(itemList.map(item => {
-            return (
-                <li key={item}>
+    const outputTitles = []
+    const outputArtists = []
+    const outputGenres = []
+    const outputRatings = []
+
+    for (let item of currTitles) {
+        let isInFilter = currFilter.title.includes(item)
+        outputTitles.push(
+            <li key={item}>
                 <label>
-                    <input type="checkbox" value={item} onChange={handleChange}/>
+                    <input 
+                        type="checkbox" 
+                        value={item} 
+                        onChange={handleChange}
+                        checked={isInFilter}
+                    />
                     {item}              
                 </label>
             </li>
-            )
-        }))
+        )      
+    }
+
+    for (let item of currArtists) {
+        let isInFilter = currFilter.artist.includes(item)
+        outputArtists.push(
+            <li key={item}>
+                <label>
+                    <input 
+                        type="checkbox" 
+                        value={item} 
+                        onChange={handleChange}
+                        checked={isInFilter}
+                    />
+                    {item}              
+                </label>
+            </li>
+        )      
+    }
+
+    for (let item of currGenres) {
+        let isInFilter = currFilter.genre.includes(item)
+        outputGenres.push(
+            <li key={item}>
+                <label>
+                    <input 
+                        type="checkbox" 
+                        value={item} 
+                        onChange={handleChange}
+                        checked={isInFilter}
+                    />
+                    {item}              
+                </label>
+            </li>
+        )      
+    }
+
+    for (let item of currRatings) {
+        let isInFilter = currFilter.rating.includes(item)
+        outputRatings.push(
+            <li key={item}>
+                <label>
+                    <input 
+                        type="checkbox" 
+                        value={item} 
+                        onChange={handleChange}
+                        checked={isInFilter}
+                    />
+                    {item}              
+                </label>
+            </li>
+        )      
     }
 
     return(
         <tr className="filter-row">
             <th>
                 <ul className="filter-list-title">
-                    {outputList[0]}
+                    {outputTitles}
                 </ul>    
             </th>
             <th>
                 <ul className="filter-list-artist">
-                    {outputList[1]}
+                    {outputArtists}
                 </ul>    
             </th>
             <th>
                 <ul className="filter-list-genre">
-                    {outputList[2]}
+                    {outputGenres}
                 </ul>    
             </th>
             <th>
                 <ul className="filter-list-rating">
-                    {outputList[3]}
+                    {outputRatings}
                 </ul>    
             </th>
         </tr>
