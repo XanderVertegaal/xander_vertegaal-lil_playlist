@@ -1,4 +1,5 @@
 import React from "react";
+import FilterBar from "./FilterBar";
 import SongList from "./SongList";
 import SortButtons from "./SortButtons";
 
@@ -27,6 +28,7 @@ const List = () => {
                         <th className="list-header-item"></th>
                     </tr>
                     <SongList />
+                    <FilterBar />
                 </tbody>
             </table>
             

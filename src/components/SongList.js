@@ -6,15 +6,15 @@ const SongList = () => {
     const currSongList = useSelector(state => state.updateSongList)
     const songItems = currSongList.map(item => (
         <tr className="item-row" id={item.id} key={item.id}>
-            <th>{item.title}</th>
-            <th>{item.artist}</th>
-            <th>{item.genre}</th>
-            <th>{item.rating}</th>
-            <th>
+            <td>{item.title}</td>
+            <td>{item.artist}</td>
+            <td>{item.genre}</td>
+            <td>{item.rating}</td>
+            <td>
                 <DeleteButton 
                     id={`btn-${item.id}`}
                 />
-            </th>
+            </td>
         </tr>
     ))
     return songItems
