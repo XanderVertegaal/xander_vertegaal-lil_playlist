@@ -74,7 +74,7 @@ export const sortRating = (order) => {
     }
 }
 
-export const updateFilter = (name, type, value) => {
+export const updateFilter = (name, type, value = true) => {
     return {
         type: "UPDATE_FILTER",
         payload: {

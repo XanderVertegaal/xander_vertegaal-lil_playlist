@@ -10,11 +10,11 @@ const GenreDropdown = (props) => {
             onChange={props.onNewValue}
             value={inputGenre}
         >
-            <option value="classical">Classical</option>
-            <option value="postrock">Postrock</option>
-            <option value="triphop">Triphop</option>
-            <option value="country">Country</option>
-            <option value="pop">Pop</option>
+            <option value="Classical">Classical</option>
+            <option value="Postrock">Postrock</option>
+            <option value="Triphop">Triphop</option>
+            <option value="Country">Country</option>
+            <option value="Pop">Pop</option>
         </select>
     )
 }

@@ -29,11 +29,10 @@ const FilterBar = () => {
     }
 
     const handleChange = event => {
-        const itemName = event.target.value;
         const itemType = event.target.parentElement.parentElement.parentElement.className.replace('filter-list-', '');
+        const itemName = (itemType === 'rating' ? parseInt(event.target.value) : event.target.value);
         const itemValue = event.target.checked;
-        dispatch(updateFilter(parseInt(itemName), itemType, itemValue))
-        
+        dispatch(updateFilter(itemName, itemType, itemValue))
     }
 
     const outputTitles = []

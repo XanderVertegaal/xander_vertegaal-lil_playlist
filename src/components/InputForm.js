@@ -2,7 +2,7 @@ import React from 'react'
 import GenreDropdown from './GenreDropdown'
 import RatingDropdown from './RatingDropdown'
 import { useSelector, useDispatch } from 'react-redux'
-import { updateArtist, updateTitle, updateGenre, updateRating, addSong } from '../actions'
+import { updateArtist, updateTitle, updateGenre, updateRating, addSong, updateFilter } from '../actions'
 
 const InputForm = () => {
     const inputTitle = useSelector(state => state.currentInput.title)
@@ -34,9 +34,14 @@ const InputForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log('Submit handler log:', inputTitle)
-        dispatch(addSong(inputTitle, inputArtist, inputGenre, inputRating, currSorting))
+        dispatch(addSong(inputTitle, inputArtist, inputGenre, parseInt(inputRating), currSorting))
+        dispatch(updateFilter(inputTitle, 'title'))
+        dispatch(updateFilter(inputArtist, 'artist'))
+        dispatch(updateFilter(inputGenre, 'genre'))
+        dispatch(updateFilter(parseInt(inputRating), 'rating'))
     }
+
+    const isDisabled = (inputTitle === "" || inputArtist === "")
 
     return (
         <form onSubmit = {handleSubmit}>
@@ -58,11 +63,11 @@ const InputForm = () => {
             </input>
             <GenreDropdown onNewValue={handleChange}/>
             <RatingDropdown onNewValue={handleChange} />
-            <button id="input-button">
+            <button id="input-button" disabled={isDisabled}>
                 Add song
             </button>
         </form>
-    )
+    ) 
 }
 
 export default InputForm
