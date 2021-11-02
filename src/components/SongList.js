@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import DeleteButton from "./DeleteButton";
 
 const SongList = () => {
-    const currSongList = useSelector(state => state.updateSongList)
+    const currSongList = useSelector(state => state.songList)
     const songItems = currSongList.map(item => (
         <tr className="item-row" id={item.id} key={item.id}>
             <td>{item.title}</td>

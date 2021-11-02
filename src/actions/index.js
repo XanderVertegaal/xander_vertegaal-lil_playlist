@@ -73,3 +73,15 @@ export const sortRating = (order) => {
         payload: order
     }
 }
+
+export const updateFilter = (name, type, value) => {
+    return {
+        type: "UPDATE_FILTER",
+        payload: {
+            name,
+            type,
+            value
+        }    
+    }
+
+}
