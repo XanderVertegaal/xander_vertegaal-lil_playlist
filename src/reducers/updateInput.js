@@ -1,6 +1,6 @@
 let defaultInputState = {
-    artist: 'Artist',
-    title: 'title',
+    artist: '',
+    title: '',
     genre: 'Classical',
     rating: 1
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import InputForm from './components/InputForm';
-import List from './components/List';
+import InputForm from "./InputForm";
+import List from "./List"
 
 const Home = () => {
     return (
