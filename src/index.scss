@@ -22,6 +22,21 @@ code {
     monospace;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  margin-left: 1em;
+  width: 40vw;
+  border-top-left-radius: 5pt;
+  border-top-right-radius: 5pt; 
+}
+
 .App {
   height: 100%;
 }
@@ -53,22 +68,6 @@ code {
   }
 
 }
-
-li {
-  list-style-type: none;
-}
-
-a {
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  background-color: white;
-  margin-left: 1em;
-  width: 40vw;
-  border-top-left-radius: 5pt;
-  border-top-right-radius: 5pt; 
-}
-
 
 .input-form {
   padding: 1em 0;
@@ -164,6 +163,14 @@ footer {
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  p {
+    flex: 1 1 auto;
+    background-color: $about-color;
+    padding: 1em 2em;
+    display: inline-block;
+    height: 100%;
+  }
 }
 
 .about-header {
@@ -171,12 +178,4 @@ footer {
   background-color: $about-color;
   text-align: center;
   padding: 2em;
-}
-
-.about p {
-  flex: 1 1 auto;
-  background-color: $about-color;
-  padding: 1em 2em;
-  display: inline-block;
-  height: 100%;
 }

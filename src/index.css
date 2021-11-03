@@ -16,6 +16,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  margin-left: 1em;
+  width: 40vw;
+  border-top-left-radius: 5pt;
+  border-top-right-radius: 5pt;
+}
+
 .App {
   height: 100%;
 }
@@ -44,21 +59,6 @@ code {
 
 .navbar-link-home {
   background-color: white;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  background-color: white;
-  margin-left: 1em;
-  width: 40vw;
-  border-top-left-radius: 5pt;
-  border-top-right-radius: 5pt;
 }
 
 .input-form {
@@ -163,15 +163,6 @@ footer {
   height: 100%;
 }
 
-.about-header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  background-color: #FDEE75;
-  text-align: center;
-  padding: 2em;
-}
-
 .about p {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -180,5 +171,14 @@ footer {
   padding: 1em 2em;
   display: inline-block;
   height: 100%;
+}
+
+.about-header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  background-color: #FDEE75;
+  text-align: center;
+  padding: 2em;
 }
 /*# sourceMappingURL=index.css.map */
