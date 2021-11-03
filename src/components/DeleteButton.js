@@ -10,7 +10,11 @@ const DeleteButton = (props) => {
     }
     
     return (
-        <button id={props.id} onClick={clickHandler}>
+        <button 
+            id={props.id} 
+            onClick={clickHandler}
+            className="delete-button"
+        >
             Delete
         </button>
     )

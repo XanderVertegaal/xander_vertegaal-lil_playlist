@@ -39,10 +39,18 @@ const SortButtons = (props) => {
 
     return (
         <>
-            <button id={`sort-${props.type}-ascending`} onClick={sortHandler}>
+            <button 
+                id={`sort-${props.type}-ascending`} 
+                className='sort-button' 
+                onClick={sortHandler}
+            >
                 🠕
             </button>
-            <button id={`sort-${props.type}-descending`} onClick={sortHandler}>
+            <button 
+                id={`sort-${props.type}-descending`} 
+                className='sort-button' 
+                onClick={sortHandler}
+            >
                 🠗
             </button>
         </>

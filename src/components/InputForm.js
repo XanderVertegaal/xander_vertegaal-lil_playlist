@@ -44,7 +44,7 @@ const InputForm = () => {
     const isDisabled = (inputTitle === "" || inputArtist === "")
 
     return (
-        <form onSubmit = {handleSubmit}>
+        <form onSubmit = {handleSubmit} className="input-form">
             <input
                 type="text"
                 value={inputTitle}

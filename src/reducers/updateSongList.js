@@ -29,9 +29,10 @@ const updateSongList = (state = defaultSongList, action) => {
     let newState = [...state]
     switch (action.type) {
         case "ADD_SONG":
-            var found = false
+            let found = false
+            let newId = 0
             for (let i = 1; found === false; i++) {
-                var newId = i;
+                newId = i;
                 found = !(newState.some(item => item.id === i))
             }
             const newArtist = action.payload.artist; 
@@ -46,7 +47,6 @@ const updateSongList = (state = defaultSongList, action) => {
                     rating: newRating
                 })
 
-            // console.log('Sorting algorithm:', action.payload.sorting.type, action.payload.sorting.order)
             newState.sort((a, b) => {
                 let x = a[action.payload.sorting.type];
                 let y = b[action.payload.sorting.type];

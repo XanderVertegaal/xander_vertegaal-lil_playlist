@@ -108,29 +108,48 @@ const FilterBar = () => {
         )      
     }
 
+    let displayStyle = {
+        display: 'none'
+    }
+    if (outputTitles.length !== 0 || 
+        outputArtists.length !== 0 || 
+        outputGenres.length !== 0 || 
+        outputRatings.length !== 0) {
+            displayStyle = {
+                display: "block"
+        }
+    }
+    
     return(
-        <tr className="filter-row">
-            <th>
-                <ul className="filter-list-title">
-                    {outputTitles}
-                </ul>    
-            </th>
-            <th>
-                <ul className="filter-list-artist">
-                    {outputArtists}
-                </ul>    
-            </th>
-            <th>
-                <ul className="filter-list-genre">
-                    {outputGenres}
-                </ul>    
-            </th>
-            <th>
-                <ul className="filter-list-rating">
-                    {outputRatings}
-                </ul>    
-            </th>
-        </tr>
+        <footer style={displayStyle} className="filter-footer">
+            <h3 className="filter-header">Available filters:</h3>
+            <table className="filter-table">
+                <tbody>
+                    <tr className="filter-row">
+                        <td>
+                            <ul className="filter-list-title">
+                                {outputTitles}
+                            </ul>    
+                        </td>
+                        <td>
+                            <ul className="filter-list-artist">
+                                {outputArtists}
+                            </ul>    
+                        </td>
+                        <td>
+                            <ul className="filter-list-genre">
+                                {outputGenres}
+                            </ul>    
+                        </td>
+                        <td>
+                            <ul className="filter-list-rating">
+                                {outputRatings}
+                            </ul>    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </footer>
     )
 }
 

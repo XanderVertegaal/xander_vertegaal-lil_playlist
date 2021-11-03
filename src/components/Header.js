@@ -3,10 +3,10 @@ import Nav from "./Nav";
 
 const Header = () => {
     return (
-        <>
-            <h1>Lil' Playlist</h1>
+        <header className="header">
+            <h1 className="header-title">Lil' Playlist</h1>
             <Nav />
-        </>
+        </header>
     )
 }
 

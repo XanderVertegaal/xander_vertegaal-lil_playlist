@@ -11,10 +11,21 @@ const GenreDropdown = (props) => {
             value={inputGenre}
         >
             <option value="Classical">Classical</option>
-            <option value="Postrock">Postrock</option>
-            <option value="Triphop">Triphop</option>
             <option value="Country">Country</option>
+            <option value="Dance">Dance</option>
+            <option value="Disco">Disco</option>
+            <option value="Hard Rock">Hard Rock</option>
+            <option value="Heavy Metal">Heavy Metal</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Latin">Latin</option>
             <option value="Pop">Pop</option>
+            <option value="Postrock">Postrock</option>
+            <option value="Rock">Rock</option>
+            <option value="Triphop">Triphop</option>
+            <option value="Rhythm and Blues">Rhythm and Blues</option>
+            
+            
+            
         </select>
     )
 }

@@ -1,34 +1,32 @@
 import React from "react";
-import FilterBar from "./FilterBar";
 import SongList from "./SongList";
 import SortButtons from "./SortButtons";
 
 const List = () => {
     return (
         <>
-            <table style={{width: "100%"}} className="list-header">
+            <table className="list-table">
                 <tbody>
-                    <tr className="song-header">  
+                    <tr className="list-header">  
                         <th className="list-header-item">
-                            Title
+                            Title <br/>
                             <SortButtons type="title"/>
                         </th>
                         <th className="list-header-item">
-                            Artist
+                            Artist <br/>
                             <SortButtons type="artist"/>
                         </th>
                         <th className="list-header-item">
-                            Genre
+                            Genre <br/>
                             <SortButtons type="genre"/>
                         </th>
                         <th className="list-header-item">
-                            Rating
+                            Rating <br/>
                             <SortButtons type="rating"/>
                         </th>
                         <th className="list-header-item"></th>
                     </tr>
                     <SongList />
-                    <FilterBar />
                 </tbody>
             </table>
             
