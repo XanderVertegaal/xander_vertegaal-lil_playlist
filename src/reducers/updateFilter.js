@@ -16,7 +16,6 @@ const updateFilter = (state = defaultFilter, action) => {
             value === true ? 
             newState[type].push(name) :
             newState[type] = newState[type].filter(item => item !== name)
-        
             break
         default:
             return state;

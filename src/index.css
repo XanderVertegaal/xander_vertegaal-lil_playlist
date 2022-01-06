@@ -160,17 +160,20 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 80vh;
+  background-color: #FDEE75;
 }
 
 .about p {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  background-color: #FDEE75;
-  padding: 1em 2em;
-  display: inline-block;
-  height: 100%;
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100vw;
+  padding: 2em 5em;
 }
 
 .about-header {

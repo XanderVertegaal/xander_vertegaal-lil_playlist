@@ -162,14 +162,17 @@ footer {
 .about {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: stretch;
+  height: 80vh;
+  background-color: $about-color;
 
   p {
-    flex: 1 1 auto;
-    background-color: $about-color;
-    padding: 1em 2em;
-    display: inline-block;
-    height: 100%;
+    // flex: 1 1 auto;
+
+    display: block;
+    align-self: center;
+    width: 100vw;
+    padding: 2em 5em;
   }
 }
 
