@@ -4,7 +4,7 @@ import Nav from "./Nav";
 const Header = () => {
     return (
         <header className="header">
-            <h1 className="header-title">Lil' Playlist</h1>
+            <h1 className="header-title">Mijn playlist</h1>
             <Nav />
         </header>
     )
